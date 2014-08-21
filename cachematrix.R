@@ -1,4 +1,4 @@
-#The first function takes a matrix and creates a cachable list of elements that can be accesed with the second one.
+#The first function takes a matrix and creates a list of elements that can be accesed with the second one.
 #The first time the second function, cacheSolve, is used, it calculates the inverse of the matrix. In subsequent times,
 # it only returns the already calculated inverse matrix, without recalculating it, to save time.
 #The code is practically identical to that the instructors' one. I only added a new message.
