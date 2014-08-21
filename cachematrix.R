@@ -3,14 +3,16 @@
 # it only returns the already calculated inverse matrix, without recalculating it, to save time.
 #The code is practically identical to that the instructors' one. I only added a new message.
 
-makeCacheMatrix <- function(x = matrix()) {  	#the only argument is a matrix. 
+makeCacheMatrix <- function(x = matrix()) 
+{  	#the only argument is a matrix. 
                                                   #The function will really return a list that points to subfunctions
                                                   #inside it
   
   inv <- NULL	#inv is the variable that carries the interesting result, but also
                                                   #is a flag, reseted to NULL each time a NEW matrix is created
   
-  set <- function(y) {	#all of this "set" subfunction...
+  set <- function(y) 
+  {	#all of this "set" subfunction...
     
     x <<- y	#...is included for coherence with the original code of the instructors, but
                                                   #can be ignored...
@@ -34,9 +36,11 @@ makeCacheMatrix <- function(x = matrix()) {  	#the only argument is a matrix.
        getInverse = getInverse)
 }
 
-cacheSolve <- function(x, ...) {                  #this is the second function, the one that calculates each new matrix only once.
+cacheSolve <- function(x, ...) 
+{                                                 #this is the second function, the one that calculates each new matrix only once.
   inv <- x$getInverse()                           #goes to makeCacheMatrix and gets the value of getInverse
-  if(!is.null(inv)) {	#if "inv" is different from NULL, that is, if it's not the first time we've used the cacheSolve function...
+  if(!is.null(inv)) 
+  {	#if "inv" is different from NULL, that is, if it's not the first time we've used the cacheSolve function...
     message("getting cached data")	#prints a message
     return(inv)	#returns the result that we already had calculated, without recalculating it
   }	#and if it's the first time, if inv is NULL, we end the if and simply continue...
